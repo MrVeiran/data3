@@ -1,0 +1,7 @@
+Задача 2
+use data3;
+select sb.Period 'Период', sb.Nomenclature 'Номенклатура', sb.Quantity 'Количество', 
+sb.Price 'Цена', sb.Currency 'Валюта' ,sum(sb.Price*sb.Quantity) 'Итого'
+  from sb
+  where sb.Nomenclature ='Сметана' or sb.Nomenclature='Мясо'
+   group by sb.period, sb.Nomenclature

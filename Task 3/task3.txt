@@ -1,0 +1,9 @@
+Задача 3
+use data3;
+select sb.Period 'Период', sb.SubDiv 'Подразделение', sb.Nomenclature 'Номенклатура', sb.Quantity 'Количество', 
+sb.Price 'Цена', sb.Currency 'Валюта', sum(sb.Price*sb.Quantity*rv.rate) 'Итого в RUB'
+from sb sb
+  join rv rv                on sb.period = rv.period
+	where sb.SubDiv!='Аврелий' 
+    group by sb.period, sb.SubDiv,sb.Nomenclature
+ 
